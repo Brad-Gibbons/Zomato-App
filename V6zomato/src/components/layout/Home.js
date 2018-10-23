@@ -47,7 +47,7 @@ class Home extends Component {
         axios
         .get(`https://developers.zomato.com/api/v2.1/cities?q=${this.state.currentCity}`, {
             headers: {   
-                'user-key': 'API_KEY_GOES_HERE'
+                'user-key': '68a99c0e7cb135d3b545bedc4f25ff0a'
         }})
         .then(results => {
             console.log('----')

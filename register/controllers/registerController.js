@@ -52,7 +52,7 @@ module.exports = {
         .then(user => {
           if(!user) {
             let errors = {}
-            errorsemail = " Email not found"
+            errors.email = " Email not found"
             errors.status = 404
             reject(errors)
           }
@@ -72,7 +72,7 @@ module.exports = {
                   name: user.name
                 }
                 
-                jwt.sign(payload, process.env.SUPER_KEY, {expiresIn: 4000}, (err, token) => {
+                jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: 4000}, (err, token) => {
                   if(err) {
                     console.log(err)
                     reject(err)

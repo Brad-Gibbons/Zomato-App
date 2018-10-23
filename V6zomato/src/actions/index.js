@@ -22,7 +22,7 @@ export const fetchZamatoCuisinesUsingCityIDAndCoords = (city, coords) =>  dispat
     console.log('hehe')
     axios
     .get(`https://developers.zomato.com/api/v2.1/cuisines?city_id=${city}&lat=${coords.lat}&lon=${coords.lng}`, {headers: {
-        'user-key': 'API_KEY_GOES_HERE'
+        'user-key': '68a99c0e7cb135d3b545bedc4f25ff0a'
     }})
     .then(results => {
         console.log('Our data from our cuisines api call')
@@ -46,7 +46,7 @@ export const fetchCityID = (city) => dispatch => {
     axios
         .get(`https://developers.zomato.com/api/v2.1/cities?q=${city}`, {
             headers: {   
-                'user-key': 'API_KEY_GOES_HERE'
+                'user-key': '68a99c0e7cb135d3b545bedc4f25ff0a'
         }})
         .then(results => {
            
@@ -86,7 +86,7 @@ export const fetchSelectedCuisine = (cuisineID, coords) => dispatch => {
 
     axios
         .get(`https://developers.zomato.com/api/v2.1/search?count=100&lat=${coords.lat}&lon=${coords.lng}&cuisines=${cuisineID}`, {headers: {
-            'user-key': 'API_KEY_GOES_HERE'
+            'user-key': '68a99c0e7cb135d3b545bedc4f25ff0a'
         }})
         .then(results => {
             //console.log('clicked cuisines from action')
@@ -142,7 +142,7 @@ export const getUserCurrentLocation = () => dispatch => {
 
 // this api call works in tandem with our backedn for user signup and authentication
 const Axios = axios.create({
-    baseURL: `http://localhost:3000`, 
+    baseURL: 'http://localhost:3000', 
     timeout: 10000,
     withCredentials: false,
     headers: {
